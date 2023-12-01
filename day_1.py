@@ -29,12 +29,12 @@ calibration_strings = calibration_string.strip().split("\n")
 print('Answer to part 1: ' + str(get_calibration_sum(calibration_strings)))
 
 ## Part 2
-# get new numbers from each line
+# define what to look for
 word_digits = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 # look, I also really hate this solution, but it works, so sue me
 replace_words = ["on1e", "tw2o", "thr3ee", "fo4ur", "fi5ve", "si6x", "se7ven", "ei8ght", "ni9ne"]
 
-# find all starting indexes of word-digits
+# find all starting indexes of word-digits and replace them with the replace-words
 new_calibration_strings = []
 
 for code in calibration_strings:
