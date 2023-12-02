@@ -7,15 +7,14 @@ raw_games = [split(":|;", x) for x in split(": |\n", game_record)[1::2]]
 
 # read each game into list of games containing dicts of sets
 games = []
-sets = []
 for game in raw_games:
+    sets = []
     for set in game:
         cubes_in_set = split(", | ", set.strip())
         sets.append(
             {k: int(v) for (k, v) in zip(cubes_in_set[1::2], cubes_in_set[::2])}
         )
     games.append(sets)
-    sets = []
 
 # loop through games to find all possible ones
 possible_games = []
